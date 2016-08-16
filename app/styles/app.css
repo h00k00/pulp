@@ -1,20 +1,15 @@
-.filter-bar {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
 .page-title {
   color: purple;
   margin-top: 4.5rem;
   margin-bottom: 0.5rem;
 }
-  
+
 input[type=search] {
   box-shadow: none;
 }
 
 .cover {
-    width: 100%;
+    width: 50%;
 }
 
 .book-author {
@@ -25,21 +20,72 @@ input[type=search] {
     font-size: 1.3rem;
 }
 
-input[type="checkbox"] {
-    width:1.3rem;
-    height:1.3rem;
+.grid {
+	list-style: none;
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
 }
-.checkbox-text {
-    font-size:1.3rem;
-    margin-left: 5px;
-    margin-right:15px;
+
+.grid li {
+	display: inline-block;
+	margin: 10px 5px 0 5px;
+	vertical-align: top;
+	height: 250px;
 }
+
+.grid li > a,
+.grid li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
+}
+
+.grid li.expanded > a::after {
+	top: auto;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #ddd;
+	border-width: 15px;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.expander {
+	position: absolute;
+	background: #ddd;
+	top: auto;
+	left: 0;
+	width: 100%;
+	margin-top: 10px;
+	text-align: left;
+	height: 0;
+	overflow: hidden;
+}
+
+.expander-inner {
+	padding: 50px 30px;
+	height: 100%;
+}
+
 
 body{
 	font:17px/1.3 'Open Sans', sans-serif;
 	color: #5e5b64;
 	text-align:left;
-    padding: 0px
+    padding: 0px;
+    position:fixed;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
 
 #results {
