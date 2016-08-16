@@ -29,8 +29,6 @@ module.exports = {
         
 //        requestUrl += $.param(PARAMS);
         
-        console.log(requestUrl);
-        
         return $.ajax({
             url: requestUrl,
             dataType: 'jsonp'

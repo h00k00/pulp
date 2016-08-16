@@ -1,5 +1,7 @@
 var React = require('react');
 
+import { Button, Modal } from 'react-bootstrap';
+
 var AuthorWrapper = React.createClass({
     render: function () {
         if (this.props.data)
@@ -10,33 +12,53 @@ var AuthorWrapper = React.createClass({
 });
 
 var BookItem = React.createClass({
+    getInitialState() {
+        return { showModal: false };
+    },
+    close() {
+        this.setState({ showModal: false });
+    },
+    handleClick: function() {
+        this.setState({ showModal: true });
+    },
     render: function() {
+
         var imageSrc = 'https://archive.org/services/img/' + this.props.records.identifier;
         var pdfUrl = 'https://archive.org/download/' + this.props.records.identifier + '/' + this.props.records.identifier + '.pdf';
         var itemUrl = 'https://archive.org/details/' + this.props.records.identifier;
         return (
             <li>
-                <a target="_blank" href={pdfUrl}>
-                    <img src={imageSrc} className="cover"/>
-                </a>
+                <img src={imageSrc} onClick={this.handleClick}/>
                 <p>
                     <a target="_blank" href={itemUrl}>
                         {this.props.records.title}
                     </a>
+                </p>
+                <p>
                     {this.props.records.creator}
                 </p>
+
+                <Modal show={this.state.showModal} onHide={this.close}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>{this.props.records.title}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <img src={imageSrc}/>
+                    <hr />
+                    <h4>Description</h4>
+                    <p>{this.props.records.description}</p>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button onClick={this.close}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
+
             </li>
         );
   }
 });
 
 var BookGrid = React.createClass({
-    // getInitialState: function () {
-    // },
-    // componentWillReceiveProps: function(nextProps) {
-    // },
-    // componentDidMount: function () {
-    // },
     render: function() {
         var itemList = [];
         var lastCategory = null;
@@ -56,7 +78,7 @@ var BookGrid = React.createClass({
         });
     
         return (
-            <ul className="grid">
+            <ul className="grid" id="grid">
                 {itemList}
             </ul>
         );
@@ -64,6 +86,7 @@ var BookGrid = React.createClass({
 });
     
 var ResultList = React.createClass({
+
     getInitialState: function () {
         return {
         };

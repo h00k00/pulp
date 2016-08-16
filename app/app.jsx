@@ -15,12 +15,10 @@ require('style!css!applicationStyles');
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
-      <Route name="kirjat" path="items/:item" component={Items}/>
-      <Route name="ekirjat" path="items/:item" component={Items}/>
-      <Route name="spefi" path="items/:item" component={Items}/>
-      <Route name="sarjakuvat" path="items/:item" component={Items}/>
-      <Route name="rikos" path="items/:item" component={Items}/>
-      <Route name="jannitys" path="items/:item" component={Items}/>
+      <Route name="galaxy" path="items/:item" component={Items}/>
+      <Route name="galaxy2nd" path="items/:item" component={Items}/>
+      <Route name="galaxynovels" path="items/:item" component={Items}/>
+      <Route name="heavymetal" path="items/:item" component={Items}/>
       <IndexRoute component={Aloitus}/>
     </Route>
   </Router>,

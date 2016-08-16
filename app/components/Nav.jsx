@@ -88,7 +88,7 @@ var Nav = React.createClass({
             return (
                 <div className = "top-bar" >
                     < div className = "top-bar-left menu-text" >
-                        Magazines
+                        PULP
                     </div>
                     < div className = "top-bar-left" >
                         {this.navigationLinks()}
