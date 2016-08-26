@@ -20,10 +20,10 @@ var Nav = React.createClass({
     },
     onSearch: function (e) {
         e.preventDefault;
-    
+
         var location = this.refs.search.value;
         var encodedLocation = encodeURIComponent(location);
-    
+
         if (location.length > 0) {
             this.refs.search.value = '';
             window.location.hash = '#/?location=' + encodedLocation;
@@ -37,12 +37,12 @@ var Nav = React.createClass({
                 <li><Link to="items/Galaxy"
                         activeClassName="active"
                         activeStyle={{fontWeight: 'bold'}}>
-                        Galaxy Magazine</Link>
+                        Galaxy</Link>
                 </li>
                 <li><Link to="items/Galaxy 2nd Series"
                         activeClassName="active"
                         activeStyle={{fontWeight: 'bold'}}>
-                        Galaxy Magazine 2nd Series</Link>
+                        Galaxy 2nd Series</Link>
                 </li>
                 <li><Link to="items/Galaxy Novels"
                         activeClassName="active"
@@ -52,7 +52,17 @@ var Nav = React.createClass({
                 <li><Link to="items/Heavy Metal"
                         activeClassName="active"
                         activeStyle={{fontWeight: 'bold'}}>
-                        Heavy Metal Magazine</Link>
+                        Heavy Metal</Link>
+                </li>
+                <li><Link to="items/Vampirella"
+                        activeClassName="active"
+                        activeStyle={{fontWeight: 'bold'}}>
+                        Vampirella</Link>
+                </li>
+                <li><Link to="items/1984"
+                        activeClassName="active"
+                        activeStyle={{fontWeight: 'bold'}}>
+                        1984</Link>
                 </li>
             </ul>
         );

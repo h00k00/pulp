@@ -19,9 +19,10 @@ ReactDOM.render(
       <Route name="galaxy2nd" path="items/:item" component={Items}/>
       <Route name="galaxynovels" path="items/:item" component={Items}/>
       <Route name="heavymetal" path="items/:item" component={Items}/>
+      <Route name="vampirella" path="items/:item" component={Items}/>
+      <Route name="1984" path="items/:item" component={Items}/>
       <IndexRoute component={Aloitus}/>
     </Route>
   </Router>,
   document.getElementById('app')
 );
-                                                                                                                                                                                                                                                                                                                                                                          
