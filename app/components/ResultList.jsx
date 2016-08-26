@@ -49,6 +49,7 @@ var BookItem = React.createClass({
                     <p>{this.props.records.description}</p>
                   </Modal.Body>
                   <Modal.Footer>
+                    <Button target="_blank" href={itemUrl}>Visit website</Button>
                     <Button onClick={this.close}>Close</Button>
                   </Modal.Footer>
                 </Modal>
