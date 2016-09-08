@@ -32,7 +32,7 @@ var Nav = React.createClass({
     navigationLinks: function () {
         return (
             <ul className={this.state.mobileNavVisible ? 'mobile-menu' : 'menu'}>
-                <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Aloitus</IndexLink>
+                <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</IndexLink>
                 </li>
                 <li><Link to="items/Galaxy"
                         activeClassName="active"
@@ -85,7 +85,7 @@ var Nav = React.createClass({
                 <div>
                     <div className = "top-bar" >
                         < div className = "top-bar-left menu-text">
-                                    Vaski uutuudet
+                                    PULP
                         </div>
                         <p onClick={this.handleNavClick}>
                             <MobileNav className="top-bar-right"/>

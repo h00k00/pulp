@@ -13,12 +13,12 @@ var Items = React.createClass({
     },
     handleSearch: function() {
         var that = this;
-        
+
        this.setState({
           isLoading: true,
           records: undefined
         });
-        
+
         console.log('handleSearch');
 
         apiArchiveOrg.getBooks(this.state.title).then(function(data) {
@@ -36,11 +36,11 @@ var Items = React.createClass({
     },
     componentWillReceiveProps: function(nextProps) {
         var that = this;
-        
+
         if (nextProps.params.item == this.state.title) {
             return;
         }
-        
+
         this.setState({
             isLoading: true,
             records: undefined,
@@ -65,12 +65,12 @@ var Items = React.createClass({
     },
     componentDidMount: function () {
         var that = this;
-            
+
         this.setState({
           isLoading: true,
           records: undefined
         });
-        
+
         apiArchiveOrg.getBooks(this.state.title).then(function (data) {
           that.setState({
             isLoading: false,
@@ -89,13 +89,13 @@ var Items = React.createClass({
 
         function renderList() {
             if (isLoading) {
-                return <h3 className = "text-center" > Haetaan tietoja... < /h3>;
+                return <h3 className = "text-center" > Fetching data... < /h3>;
             }
             else if (records) {
                 return <ResultList records={records}/>;
             }
         }
-    
+
         return (
             <div>
                 < h1 className = "text-center page-title" >

@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
-var Aloitus = require('Aloitus');
+var About = require('About');
 var Items = require('Items');
 
 // load foundation
@@ -21,7 +21,7 @@ ReactDOM.render(
       <Route name="heavymetal" path="items/:item" component={Items}/>
       <Route name="vampirella" path="items/:item" component={Items}/>
       <Route name="1984" path="items/:item" component={Items}/>
-      <IndexRoute component={Aloitus}/>
+      <IndexRoute component={About}/>
     </Route>
   </Router>,
   document.getElementById('app')

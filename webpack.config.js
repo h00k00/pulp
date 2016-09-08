@@ -24,7 +24,7 @@ module.exports = {
     alias: {
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
-      Aloitus: 'app/components/Aloitus.jsx',
+      About: 'app/components/About.jsx',
       ResultList: 'app/components/ResultList.jsx',
       Items: 'app/components/Items.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
@@ -47,15 +47,3 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map'
 };
-                                                     
-                                                     
-                                                     
-                                                     
-                                                     
-                                                     
-                                                     
-                                                     
-                                                     
-
-        
-
