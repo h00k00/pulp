@@ -1,10 +1,9 @@
 var webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: [
-    'script!jquery/dist/jquery.min.js',
-    'script!foundation-sites/dist/foundation.min.js',
-    './app/app.jsx'
+    './app/app.js'
   ],
   externals: {
     jquery: 'jQuery'
@@ -12,7 +11,8 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       '$': 'jquery',
-      'jQuery': 'jquery'
+      'jQuery': 'jquery',
+      'jquery': 'jquery'
     })
   ],
   output: {
@@ -20,18 +20,17 @@ module.exports = {
    filename: './public/bundle.js'
   },
   resolve: {
-    root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx',
-      About: 'app/components/About.jsx',
-      ResultList: 'app/components/ResultList.jsx',
-      Items: 'app/components/Items.jsx',
-      ErrorModal: 'app/components/ErrorModal.jsx',
-      apiArchiveOrg: 'app/api/apiArchiveOrg.jsx',
-      applicationStyles: 'app/styles/app.css'
+      Main: path.resolve(__dirname, 'app/components/Main.js'),
+      Nav: path.resolve(__dirname, 'app/components/Nav.js'),
+      About: path.resolve(__dirname, 'app/components/About.js'),
+      ResultList: path.resolve(__dirname, 'app/components/ResultList.js'),
+      Items: path.resolve(__dirname, 'app/components/Items.js'),
+      ErrorModal: path.resolve(__dirname, 'app/components/ErrorModal.js'),
+      apiArchiveOrg: path.resolve(__dirname, 'app/api/apiArchiveOrg.js'),
+      applicationStyles: path.resolve(__dirname, 'app/styles/app.css')
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   module: {
    loaders: [
@@ -40,7 +39,7 @@ module.exports = {
        query: {
          presets: ['react', 'es2015', 'stage-0']
        },
-       test: /\.jsx?$/,
+       test: /\.js?$/,
        exclude: /(node_modules|bower_components)/
      }
    ]
