@@ -30,16 +30,14 @@ class BookItem extends Component{
         let pdfUrl = 'https://archive.org/download/' + this.props.records.identifier + '/' + this.props.records.identifier + '.pdf';
         let itemUrl = 'https://archive.org/details/' + this.props.records.identifier;
         return (
-            <li>
-                <img src={imageSrc} onClick={this.handleClick}/>
-                <p>
+            <li className="flex-item">
+                  <img src={imageSrc} className="cover" onClick={this.handleClick}/>
+                  <div>
                     <a target="_blank" href={itemUrl}>
                         {this.props.records.title}
                     </a>
-                </p>
-                <p>
                     {this.props.records.creator}
-                </p>
+                  </div>
 
                 <Modal show={this.state.showModal} onHide={this.close}>
                   <Modal.Header closeButton>
@@ -82,7 +80,7 @@ class BookGrid extends Component {
         });
 
         return (
-            <ul className="grid" id="grid">
+            <ul className="flex-container" id="grid">
                 {itemList}
             </ul>
         );
